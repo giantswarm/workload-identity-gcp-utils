@@ -1,0 +1,18 @@
+title: "Giantswarm Google Compute Engine Persistent Disk CSI Driver Custom Role"
+description: "Custom role required for the gcp-compute-persistent-disk-csi-driver to function"
+stage: "ALPHA"
+includedPermissions:
+- compute.disks.create
+- compute.disks.delete
+- compute.disks.get
+- compute.disks.list
+- compute.disks.use
+- compute.instances.attachDisk
+- compute.instances.detachDisk
+- compute.instances.get
+- compute.zoneOperations.get
+- compute.zones.list
+- iam.serviceAccounts.actAs
+- iam.serviceAccounts.get
+- iam.serviceAccounts.list
+- resourcemanager.projects.get
