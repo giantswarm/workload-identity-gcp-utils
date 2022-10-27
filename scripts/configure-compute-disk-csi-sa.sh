@@ -8,7 +8,7 @@ readonly SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 source "${SCRIPT_DIR}/gloud-util.sh"
 
 function main() {
-  local -r service_account="compute-persistent-disk-csi"
+  local -r service_account="gcp-compute-persistent-disk-cs"
   local -r sa_display_name="gcp-compute-persistent-disk-csi-driver-app"
   local -r principal="serviceAccount:${service_account}@${GCP_PROJECT_ID}.iam.gserviceaccount.com"
 
