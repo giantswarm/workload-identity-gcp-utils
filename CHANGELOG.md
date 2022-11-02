@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
-- Add script to configure an apps workload identity
+- Add script to configure apps using workload identity
 - Add script to configure `gcp-compute-persistent-disk-csi-driver-app`
 
 
