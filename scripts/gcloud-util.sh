@@ -4,7 +4,7 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-function create_sa(){
+function create_sa() {
   local name=$1
   local display_name=$2
 
@@ -27,7 +27,8 @@ function create_role() {
   set -x +e
   gcloud iam roles create $name \
     --file=${file_path} \
-    --project=${GCP_PROJECT_ID}
+    --project=${GCP_PROJECT_ID} \
+    --quiet
 
   { set +x -e; } 2>/dev/null
 }
@@ -83,3 +84,25 @@ function add_sa_policy_binding() {
   { set +x; } 2>/dev/null
 }
 
+#######################################
+# Adds the workloadIdentityUser service account role
+# Arguments:
+#   - The service account ID or fully qualified identifier for the service account
+#
+#   - The Kubernetes namespace of the Kubernetes Service Account
+#
+#   - The Kubernetes name of the Kubernetes Service Account
+#######################################
+function add_workload_identity_role() {
+  local service_account="$1"
+  local kube_namespace="$2"
+  local kube_service_account="$3"
+
+  local -r workload_pool_id="${GCP_PROJECT_ID}.svc.id.goog"
+  local -r service_account_id="${service_account}@${GCP_PROJECT_ID}.iam.gserviceaccount.com"
+  local -r kube_principal="serviceAccount:${workload_pool_id}[${kube_namespace}/${kube_service_account}]"
+  local -r workload_identity_user_role="roles/iam.workloadIdentityUser"
+
+  # Create kubernetes service account policy binding
+  add_sa_policy_binding "${service_account_id}" "${kube_principal}" "${workload_identity_user_role}"
+}

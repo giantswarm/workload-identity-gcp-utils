@@ -1,0 +1,14 @@
+title: "Giantswarm External DNS Custom Role"
+description: "Custom role required for external-dns to function"
+stage: "ALPHA"
+includedPermissions:
+- dns.changes.create
+- dns.managedZones.create
+- dns.managedZones.delete
+- dns.managedZones.get
+- dns.managedZones.list
+- dns.resourceRecordSets.create
+- dns.resourceRecordSets.delete
+- dns.resourceRecordSets.get
+- dns.resourceRecordSets.list
+- dns.resourceRecordSets.update

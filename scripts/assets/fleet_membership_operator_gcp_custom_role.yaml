@@ -1,0 +1,8 @@
+title: "Giantswarm Fleet Membership Operator Custom Role"
+description: "Custom role required for the fleet-membership-operator-gcp to function"
+stage: "ALPHA"
+includedPermissions:
+- gkehub.memberships.create
+- gkehub.memberships.delete
+- gkehub.memberships.get
+- gkehub.operations.get
