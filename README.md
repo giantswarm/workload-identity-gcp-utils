@@ -12,7 +12,7 @@ A collection of scripts to help you configure and use workload identity on GCP.
    accounts, roles and assing roles to service accounts on the project level as
    well as assign service account users.
 
-### Installing everyting
+### Installing everything
 
 To install all service accounts simply run:
 ```sh
