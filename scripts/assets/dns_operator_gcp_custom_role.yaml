@@ -1,0 +1,14 @@
+title: "Giantswarm DNS Operator Custom Role"
+description: "Custom role required for the dns-operator-gcp to function"
+stage: "ALPHA"
+includedPermissions:
+- dns.changes.create
+- dns.managedZones.create
+- dns.managedZones.delete
+- dns.managedZones.get
+- dns.managedZones.list
+- dns.resourceRecordSets.create
+- dns.resourceRecordSets.delete
+- dns.resourceRecordSets.get
+- dns.resourceRecordSets.list
+- dns.resourceRecordSets.update

@@ -1,0 +1,18 @@
+title: "Giantswarm Firewall Rule Operator Custom Role"
+description: "Custom role required for the capg-firewall-rule-operator to function"
+stage: "ALPHA"
+includedPermissions:
+- compute.addresses.list
+- compute.backendServices.setSecurityPolicy
+- compute.firewalls.create
+- compute.firewalls.delete
+- compute.firewalls.get
+- compute.firewalls.update
+- compute.globalOperations.get
+- compute.networks.updatePolicy
+- compute.routers.get
+- compute.securityPolicies.create
+- compute.securityPolicies.delete
+- compute.securityPolicies.get
+- compute.securityPolicies.update
+- compute.securityPolicies.use

@@ -1,0 +1,47 @@
+title: "Giantswarm Control Plane Custom Role"
+description: "Custom role required for the kubernetes control-plane to function"
+stage: "ALPHA"
+includedPermissions:
+- compute.disks.create
+- compute.disks.delete
+- compute.disks.get
+- compute.disks.list
+- compute.disks.use
+- compute.instances.attachDisk
+- compute.instances.detachDisk
+- compute.instances.get
+- compute.zoneOperations.get
+- compute.zones.list
+- iam.serviceAccounts.actAs
+- compute.addresses.create
+- compute.addresses.delete
+- compute.addresses.get
+- compute.addresses.list
+- compute.addresses.use
+- compute.disks.list
+- compute.firewalls.create
+- compute.firewalls.delete
+- compute.firewalls.get
+- compute.forwardingRules.create
+- compute.forwardingRules.delete
+- compute.forwardingRules.get
+- compute.globalOperations.get
+- compute.httpHealthChecks.create
+- compute.httpHealthChecks.delete
+- compute.httpHealthChecks.get
+- compute.httpHealthChecks.useReadOnly
+- compute.instances.get
+- compute.instances.list
+- compute.instances.use
+- compute.networks.updatePolicy
+- compute.regionOperations.get
+- compute.routes.create
+- compute.routes.delete
+- compute.routes.list
+- compute.targetPools.addInstance
+- compute.targetPools.create
+- compute.targetPools.delete
+- compute.targetPools.get
+- compute.targetPools.removeInstance
+- compute.targetPools.use
+- compute.zones.list

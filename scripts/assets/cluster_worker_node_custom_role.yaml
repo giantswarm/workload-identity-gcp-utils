@@ -1,0 +1,15 @@
+title: "Giantswarm Worker Node Custom Role"
+description: "Custom role required for the kubernetes worker nodes to function"
+stage: "ALPHA"
+includedPermissions:
+- compute.disks.create
+- compute.disks.delete
+- compute.disks.get
+- compute.disks.list
+- compute.disks.use
+- compute.instances.attachDisk
+- compute.instances.detachDisk
+- compute.instances.get
+- compute.zoneOperations.get
+- compute.zones.list
+- iam.serviceAccounts.actAs

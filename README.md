@@ -1,30 +1,29 @@
-[![CircleCI](https://circleci.com/gh/giantswarm/template.svg?style=shield)](https://circleci.com/gh/giantswarm/template)
+# workload-identity-gcp-utils
 
-# REPOSITORY_NAME
+A collection of scripts to help you configure and use workload identity on GCP.
 
-This is a template repository containing some basic files every repository
-needs.
+## Usage
 
-To use it just hit `Use this template` button or [this link][generate].
+### Prerequisites 
 
-Things to do with your newly created repo:
+1. Install [gcloud cli](https://cloud.google.com/sdk/docs/install)
+1. Run `gcloud auth login`
+1. Make sure you log in with a user that has the permissions to create service
+   accounts, roles and assing roles to service accounts on the project level as
+   well as assign service account users.
 
-1. Run`devctl replace -i "REPOSITORY_NAME" "$(basename $(git rev-parse
-   --show-toplevel))" --ignore '.git/**' '**'`.
-2. Run `devctl replace -i "template" "$(basename $(git rev-parse
-   --show-toplevel))" --ignore '.git/**' '**'`.
-3. Go to https://github.com/giantswarm/REPOSITORY_NAME/settings and make sure `Allow
-   merge commits` box is unchecked and `Automatically delete head branches` box
-   is checked.
-4. Go to https://github.com/giantswarm/REPOSITORY_NAME/settings/access and add
-   `giantswarm/bots` with `Write` access and `giantswarm/employees` with
-   `Admin` access.
-5. Add this repository to https://github.com/giantswarm/github.
-6. Create quay.io docker repository if needed.
-7. Add the project to the CircleCI:
-   https://circleci.com/setup-project/gh/giantswarm/REPOSITORY_NAME
-8. Change the badge (with style=shield):
-   https://circleci.com/gh/giantswarm/REPOSITORY_NAME.svg?style=shield&circle-token=TOKEN_FOR_PRIVATE_REPO
-   If this is a private repository token with scope `status` will be needed.
+### Installing everything
 
-[generate]: https://github.com/giantswarm/template/generate
+To install all service accounts simply run:
+```sh
+GCP_PROJECT=<your-project-id> make all
+```
+
+_NOTE:_ You can also just export the `GCP_PROJECT` env var instead of passing it to each make call.
+
+### Install specific service account
+
+You can install a specific service account by calling it's make target. To get a list of all available targets run `make help`
+```sh
+GCP_PROJECT=<your-project-id> make <some-service-account-target>
+```
