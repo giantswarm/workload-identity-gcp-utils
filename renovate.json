@@ -1,8 +1,9 @@
 {
   "extends": [
-    "config:base"
+    "config:base",
+    ":reviewer(team:team-hydra)"
   ],
-  "labels": ["dependencies"],
+  "labels": ["dependencies", "renovate"],
   "dependencyDashboard": true,
   "ignorePaths": [
     ".github/workflows/zz_generated.*",
