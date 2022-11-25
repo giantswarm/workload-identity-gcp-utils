@@ -7,6 +7,7 @@ includedPermissions:
 - compute.disks.get
 - compute.disks.list
 - compute.disks.use
+- compute.instanceGroups.get
 - compute.instances.attachDisk
 - compute.instances.detachDisk
 - compute.instances.get
